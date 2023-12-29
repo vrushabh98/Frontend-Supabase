@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Login from "./Pages/Authentication/Login";
 import Signup from "./Pages/Authentication/Signup";
 import NotFound from "./Pages/Authentication/NotFound";
@@ -12,7 +12,7 @@ function App() {
   const loggedInUser = JSON.parse(sessionStorage.getItem("user"));
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -24,7 +24,7 @@ function App() {
         <Route path="/userwithdb" element={<UserWithDB />} />
 
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
